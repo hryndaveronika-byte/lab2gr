@@ -1,0 +1,29 @@
+### 1. Create reader
+POST http://localhost:8080/api/readers
+Content-Type: application/json
+
+{"firstName":"Anna","lastName":"Ivanenko","email":"anna@example.com"}
+
+### 2. Create book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{"title":"Clean Code","author":"Robert C. Martin","isbn":"9780132350884"}
+
+### 3. All books
+GET http://localhost:8080/api/books
+
+### 4. Borrow book (replace IDs with those returned above)
+POST http://localhost:8080/api/loans
+Content-Type: application/json
+
+{"readerId":1,"bookId":1}
+
+### 5. Reliability
+GET http://localhost:8080/api/readers/1/reliability
+
+### 6. Active loans
+GET http://localhost:8080/api/readers/1/loans/active
+
+### 7. Return book (replace ID with loan ID)
+POST http://localhost:8080/api/loans/1/return
